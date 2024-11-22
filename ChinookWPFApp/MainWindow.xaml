@@ -1,0 +1,81 @@
+﻿<Window x:Class="ChinookWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ChinookWPFApp"
+        Title="Chinook Music Store" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="LightBlue">
+
+    <DockPanel>
+        <!-- Insert NavigationControl at the top -->
+        <local:NavigationControl  DockPanel.Dock="Top" DataContext="{Binding}"  />
+
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+
+            <!-- Sidebar -->
+            <StackPanel Grid.Column="0" Background="#1E3A5F" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                <Button Command="{Binding HomeCommand}" Background="Transparent" BorderBrush="Transparent" Margin="5" ToolTip="Home">
+                    <StackPanel>
+                        <Image Source="Images/home.png" Width="40" Height="40"/>
+                        <TextBlock Text="Home" Foreground="White" HorizontalAlignment="Center" Margin="4"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding ArtistsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="10" ToolTip="View Artists">
+                    <StackPanel>
+                        <Image Source="Images/artists.png" Width="40" Height="40"/>
+                        <TextBlock Text="Artists" Foreground="White" HorizontalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding AlbumsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="10" ToolTip="View Albums">
+                    <StackPanel>
+                        <Image Source="Images/albums.png" Width="40" Height="40"/>
+                        <TextBlock Text="Albums" Foreground="White" HorizontalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding TracksCommand}" Background="Transparent" BorderBrush="Transparent" Margin="10" ToolTip="View Tracks">
+                    <StackPanel>
+                        <Image Source="Images/tracks.png" Width="40" Height="40"/>
+                        <TextBlock Text="Tracks" Foreground="White" HorizontalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding MusicCatalogsCommand}" Background="Transparent" BorderBrush="Transparent" Margin="10" ToolTip="View Music Catalogs">
+                    <StackPanel>
+                        <Image Source="Images/music_cat.png" Width="40" Height="40"/>
+                        <TextBlock Text="Music Catalogs" Foreground="White" HorizontalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding CustomerOrdersCommand}" Background="Transparent" BorderBrush="Transparent" Margin="10" ToolTip="View Customer Orders">
+                    <StackPanel>
+                        <Image Source="Images/cust_order.png" Width="40" Height="40"/>
+                        <TextBlock Text="Customer Orders" Foreground="White" HorizontalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Column="1" Background="#95DEE2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Header Text -->
+                <TextBlock Text="Welcome to the Chinook Music Store"
+                           FontWeight="Bold"
+                           FontSize="29"
+                           Foreground="#1E3A5F"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Margin="0,20,0,20"/>
+
+                <!-- Main Content Frame -->
+                <Frame x:Name="MainContentFrame" Grid.Row="1" Background="LightSteelBlue" NavigationUIVisibility="Hidden" Margin="20"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
