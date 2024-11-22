@@ -1,0 +1,36 @@
+﻿<Page x:Class="ChinookWPFApp.TracksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Tracks Page" Background="#cfbaf0">
+
+    <Grid Margin="10">
+        <!-- Page Header -->
+        <TextBlock Text="Chinook Tracks" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="#1E3A5F" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top"
+                   Margin="0,0,0,20"/>
+
+        <!-- ListView to Display Track Data -->
+        <ListView Name="TracksListView" Margin="0,60,0,10" Background="#c8e7ff">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#cfbaf0" CornerRadius="5" Padding="10" Margin="5">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="#2E3B4E" />
+                            <TextBlock Text="{Binding Composer}" FontStyle="Italic" />
+                            <TextBlock Text="Length: {Binding Milliseconds} ms" />
+                            <TextBlock Text="Size: {Binding Bytes} bytes" />
+                            <TextBlock Text="Price: {Binding UnitPrice, StringFormat=C}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+
+
+

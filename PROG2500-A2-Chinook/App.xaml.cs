@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ChinookWPFApp.Models;
 using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
-namespace PROG2500_A2_Chinook
+
+
+namespace ChinookWPFApp
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -14,4 +13,5 @@ namespace PROG2500_A2_Chinook
     public partial class App : Application
     {
     }
+
 }
